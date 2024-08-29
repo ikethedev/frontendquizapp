@@ -1,50 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>Frontend Mentor | Frontend quiz app</title>
-  <link rel="stylesheet" href="./styles/font.css">
-  <link rel="stylesheet" href="./styles/common.css">
-  <link rel="stylesheet" href="./styles/homepage.css">
-  <link rel="stylesheet" href="./styles/question.css">
-  <link rel="stylesheet" href="./styles/score.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Frontend quiz app</title>
+    <link rel="stylesheet" href="./styles/font.css" />
+    <link rel="stylesheet" href="./styles/common.css" />
+    <link rel="stylesheet" href="./styles/homepage.css" />
+    <link rel="stylesheet" href="./styles/question.css" />
+    <link rel="stylesheet" href="./styles/score.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <nav>
+      <!-- this can is dynamic -->
+      <div>
+        <span class="current__quiz">
+          <img
+          class="current__quiz--icon-image"
+          src="./assets/images/icon-accessibility.svg"
+          alt="You are currently doing the accessibility quiz"
+        />
+        <h2 class="current__quiz--title heading-small">Accessibility</h2>
+        </span>
+      </div>
+      <div class="toggle">
+        <img
+          src="./assets/images/icon-sun-light.svg"
+          alt="toggle light mode"
+          class="toggle__light--mode"
+        />
+        <div class="toggle__button"></div>
+        <img
+          src="./assets/images/icon-moon-light.svg"
+          alt="toggle dark mode"
+          class="toggle__dark-mode"
+        />
+      </div>
+    </nav>
+    <!-- Quiz menu start -->
+    <main>
+      <section class="welcome">
+        <header>
+          <div>
+            <h1 class="header__welcome--message">Welcome to the <span class="heading-large">Frontend Quiz!</span></h1>
+            <p class="font--italic font--small">Pick a subject to get started.</p>
+          </div>    
+        </header>
+        <div class="options">
+          <div class="option__item">
+            <img src="./assets/images/icon-html.svg" alt="Click to take the html quiz">
+            <p class="heading-small">HTML</p>
+          </div>
+          <div class="option__item">
+            <img src="./assets/images/icon-css.svg" alt="Click to take the html quiz">
+            <p class="heading-small">CSS</p>
+          </div>
+          <div class="option__item">
+            <img src="./assets/images/icon-js.svg" alt="Click to take the html quiz">
+            <p class="heading-small">Javascript</p>
+          </div>
+          <div class="option__item">
+            <img src="./assets/images/icon-accessibility.svg" alt="Click to take the html quiz">
+            <p class="heading-small">Accessibility</p>
+          </div>
+        </div>
+      </section>
+      <!-- Quiz menu end -->
 
-  <!-- Quiz menu start -->
+      <!-- Quiz question start -->
+      <section class="quiz hidden">
+        <div class="quiz__question">
+          <p class="question__question--number">Question 6 of 10</p> 
+          <h3 class="question__question--text heading-medium">Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?</h3>
+          <input type="range" name="progress" id="progress_bar" class="progress__bar">
+        </div>
+        <div class="quiz__answer">
+          <div class="quiz__choice">
+            <p class="heading-small"><span class="quiz__answer--choice heading-small">A</span> 4.5 : 1</p>
+          </div>
+          <div class="quiz__choice">
+            <p class="heading-small"><span class="quiz__answer--choice heading-small">B</span> 3 : 1</p>
+          </div>
+          <div class="quiz__choice">
+            <p class="heading-small"><span class="quiz__answer--choice heading-small">C</span> 2.5 : 1</p>
+          </div>
+          <div class="quiz__choice">
+            <p class="heading-small"><span class="quiz__answer--choice heading-small">D</span> 5 : 1</p>
+          </div>
+          <button class="btn" id="submit_answer">Submit answer</button>
+          <div class="error__message">
+           <span><img src="./assets/images/icon-error.svg" alt="please select an answer"> Please select an answer</span>
+          </div>
+        </div>
+      </section >
+    
+      <!-- Quiz question end -->
 
-  Welcome to the Frontend Quiz!
-  Pick a subject to get started.
-
-  HTML
-  CSS
-  JavaScript
-  Accessibility
-
-  <!-- Quiz menu end -->
-
-  <!-- Quiz question start -->
-
-  Question <!-- number --> of 10
-
-  A
-  B
-  C
-  D
-
-  Submit answer
-
-  <!-- Quiz question end -->
-
-  <!-- Quiz completed start -->
-
-  Quiz completed
-  You scored...
-
-  <!-- score --> out of 10
-
-  <!-- Quiz completed end -->
-
-</body>
+      <!-- Quiz completed start -->
+      <section class="results hidden">
+        <header>
+          <div>
+            <h1 class="header__welcome--message">Quiz completed<span class="heading-large">You scored...</span></h1>
+            <p class="font--italic font--small">Pick a subject to get started.</p>
+          </div>    
+        <!-- score -->
+          <div>
+            <div>
+              <div>
+                <span class="current__quiz">
+                  <img
+                  class="current__quiz--icon-image"
+                  src="./assets/images/icon-accessibility.svg"
+                  alt="You are currently doing the accessibility quiz"
+                />
+                <h2 class="current__quiz--title heading-small">Accessibility</h2>
+                </span>
+              </div>
+              <div>
+                <p class="display">8</p>
+                <p class="body-medium">out of 10</p>
+              </div>
+            </div>
+          </div>
+          <button class="btn" id="submit_answer">Play Again</button>
+      </section>
+      <!-- Quiz completed end -->
+    </main>
+  </body>
 </html>
