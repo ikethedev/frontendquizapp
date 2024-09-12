@@ -11,7 +11,9 @@ const resetGame = () => {
     document.querySelector(".score__count").textContent = score;
     document.querySelector(".results").classList.add("hidden")
     document.querySelector(".welcome").classList.remove("hidden")
+    document.querySelector(".current__quiz--title").textContent = "Welcome to the quiz"
     data = []
+
 }
 
 playAgain.addEventListener('click', resetGame)

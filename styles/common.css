@@ -252,14 +252,19 @@ h1 {
 
 .heading-small {
   color: var(--dark-navy);
-  font-weight: 600;
   font-size: 0.875rem;
   line-height: 100%;
 }
 
 @media screen and (min-width: 48rem) {
   .heading-small {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .heading-small {
+    font-size: 1.5rem;
   }
 }
 
@@ -457,4 +462,11 @@ picture {
   }
 }
 
+.btn:hover{
+  opacity: 0.6;
+  cursor: pointer;
+}
 
+.option__item:hover{
+cursor: pointer;
+}
