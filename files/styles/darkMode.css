@@ -1,0 +1,31 @@
+
+.darkMode__background{
+  background-color: var(--dark-navy);
+}
+
+.darkModeImage {
+  background-image: url("../assets/images/pattern-background-mobile-dark.svg");
+}
+
+.darkModeAnswerChoice{
+    background-color: var(--dark-gray);
+}
+
+@media screen and (min-width: 48rem) {
+  .darkModeImage {
+    background-image: url("../assets/images/pattern-background-tablet-dark.svg");
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .darkModeImage {
+    background-image: url("../assets/images/pattern-background-desktop-dark.svg");
+  }
+}
+.darkMode__text{
+  color: var(--white);
+}
+
+.darkModeQuestionBg {
+  background-color: var(--dark-mode-question-background);
+}

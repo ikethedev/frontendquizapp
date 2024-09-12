@@ -1,0 +1,51 @@
+
+.welcome__header{
+    flex-direction: column;
+    gap: 0.6878rem;
+}
+
+@media screen and (min-width:64rem) {
+    .welcome__header{
+        width: 50%;
+    }
+}
+
+.header__welcome--message{
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+@media screen and (min-width:64rem) {
+    .header__welcome--message{
+        max-width: 29.06rem;
+    }
+}
+
+.welcome__header--subtext{
+    color: var(--dark-gray);
+    letter-spacing: 0.00234rem;
+}
+
+.heading__spacer{
+    padding: 0.094rem;
+}
+
+.welcome__spacer{
+    margin-top: 4rem;
+}
+.background__orange{
+    background-color: #FFF1E9;
+}
+
+.background__green{
+    background-color: #E0FDEF;
+}
+
+.background__blue{
+    background-color: #EBF0FF;
+}
+
+.background__purple{
+    background-color: #F6E7FF;
+}
+

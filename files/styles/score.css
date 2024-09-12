@@ -1,0 +1,75 @@
+.header {
+  height: 5.5rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .header {
+    height: 8.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.header p {
+  font-size: 2.5rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .header p {
+    font-size: 4rem;
+  }
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 1.4534rem 2rem;
+  background-color: var(--white);
+  border-radius: 0.75rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 48rem) {
+  .score {
+    padding: 3.9533rem 2rem;
+    margin-bottom: 2rem;
+  }
+}
+.score__current--quiz {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.display {
+  font-size: 5.5rem;
+}
+
+@media screen and (min-width: 48rem) {
+  .display {
+    font-size: 9rem;
+  }
+}
+
+.current__quiz--total--questions {
+  color: var(--dark-gray);
+}
+
+@media screen and (min-width: 48rem) {
+  .results {
+    margin-top: 3.06em;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+    .results header {
+      width: 50%;
+    }
+
+    .results__score--container{
+        width: 50%;
+    }
+  }
+  
+
+

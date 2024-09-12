@@ -9,60 +9,76 @@
     <link rel="stylesheet" href="./styles/homepage.css" />
     <link rel="stylesheet" href="./styles/question.css" />
     <link rel="stylesheet" href="./styles/score.css" />
+    <link rel="stylesheet" href="./styles/darkMode.css">
+    <script src="question.js" module defer></script>
+    <script src="homepage.js" module defer></script>
+    <script src="score.js" module defer></script>
+    <script src="script.js" module defer></script>
+   
   </head>
   <body>
     <!-- Header -->
-    <nav>
+    <nav class="flex">
       <!-- this can is dynamic -->
-      <div>
-        <span class="current__quiz">
-          <img
-          class="current__quiz--icon-image"
-          src="./assets/images/icon-accessibility.svg"
-          alt="You are currently doing the accessibility quiz"
-        />
+        <span class="flex current__quiz hidden ">
+          <picture class="current__quiz--icon background__purple">          
+            <img
+            class="current__quiz--icon-image icon"
+            src="./assets/images/icon-accessibility.svg"
+            alt="You are currently doing the accessibility quiz"
+            />
+          </picture>
+          
         <h2 class="current__quiz--title heading-small">Accessibility</h2>
         </span>
-      </div>
-      <div class="toggle">
+      <div class="toggle flex">
         <img
-          src="./assets/images/icon-sun-light.svg"
+          src="./assets/images/icon-sun-dark.svg"
           alt="toggle light mode"
-          class="toggle__light--mode"
+          class="toggle__light--mode toggle__icon"
         />
-        <div class="toggle__button"></div>
+        <div class="toggle__button">
+          <div class="toggle__button--switch"></div>
+        </div>
         <img
-          src="./assets/images/icon-moon-light.svg"
+          src="./assets/images/icon-moon-dark.svg"
           alt="toggle dark mode"
-          class="toggle__dark-mode"
+          class="toggle__dark--mode toggle__icon"
         />
       </div>
     </nav>
     <!-- Quiz menu start -->
     <main>
-      <section class="welcome">
-        <header>
-          <div>
-            <h1 class="header__welcome--message">Welcome to the <span class="heading-large">Frontend Quiz!</span></h1>
-            <p class="font--italic font--small">Pick a subject to get started.</p>
-          </div>    
+      <section class="welcome hidden">
+        <header class="welcome__header flex">
+            <h1 class="header__welcome--message heading-large"><span class="font-light">Welcome to the</span> Frontend Quiz!</h1>
+            <p class="font--italic font--small welcome__header--subtext">Pick a subject to get started.</p>  
         </header>
+        <div class="welcome__spacer"></div>
         <div class="options">
-          <div class="option__item">
-            <img src="./assets/images/icon-html.svg" alt="Click to take the html quiz">
-            <p class="heading-small">HTML</p>
+          <div class="option__item ">
+            <picture class="background__orange">
+              <img class="icon option__item--choice--icon" src="./assets/images/icon-html.svg" alt="Click to take the html quiz">
+            </picture>
+            <p id="0" class="heading-small">HTML</p>
           </div>
           <div class="option__item">
-            <img src="./assets/images/icon-css.svg" alt="Click to take the html quiz">
-            <p class="heading-small">CSS</p>
+            <picture class="background__green">
+              <img class="icon option__item--choice--icon" src="./assets/images/icon-css.svg" alt="Click to take the html quiz">
+            </picture>
+            <p id="1" class="heading-small">CSS</p>
           </div>
-          <div class="option__item">
-            <img src="./assets/images/icon-js.svg" alt="Click to take the html quiz">
-            <p class="heading-small">Javascript</p>
+          <div class="option__item ">
+            <picture class="background__blue">
+              <img class="icon option__item--choice--icon" src="./assets/images/icon-js.svg" alt="Click to take the html quiz">
+            </picture>
+            <p id="2" class="heading-small">Javascript</p>
           </div>
-          <div class="option__item">
-            <img src="./assets/images/icon-accessibility.svg" alt="Click to take the html quiz">
-            <p class="heading-small">Accessibility</p>
+          <div class="option__item ">
+            <picture class="background__purple">
+              <img class="icon option__item--choice--icon background__purple" src="./assets/images/icon-accessibility.svg" alt="Click to take the html quiz">
+            </picture>
+            <p id="3" class="heading-small">Accessibility</p>
           </div>
         </div>
       </section>
@@ -71,59 +87,81 @@
       <!-- Quiz question start -->
       <section class="quiz hidden">
         <div class="quiz__question">
-          <p class="question__question--number">Question 6 of 10</p> 
-          <h3 class="question__question--text heading-medium">Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?</h3>
-          <input type="range" name="progress" id="progress_bar" class="progress__bar">
+          <p class="question__question--number body__small">Question <span class="question__count">1</span> of 10</p> 
+          <div class="question__question--number--space"></div>
+          <h3 id="question__question--text" class="question__question--text heading__medium">Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?</h3>
+          <div class="question__quiz--spacer"></div>
+          <div class="progress__bar--container">
+            <input type="range" name="progress" class="progress__bar--track" >
+            <div class="progress__bar"></div>
+          </div>
         </div>
+        <div class="spacer--40"></div>
         <div class="quiz__answer">
-          <div class="quiz__choice">
-            <p class="heading-small"><span class="quiz__answer--choice heading-small">A</span> 4.5 : 1</p>
+          <div class="quiz__option--container">
+            <div class="option__item quiz__choice">
+              <p class="option__item--choice--background quiz__answer--choice heading-small">A</p>
+              <p class= "heading-small">4.5 : 1</p>
+              <img class="correct__icon" src="./assets/images/icon-correct.svg" alt="">
+            </div>
+            <div class="option__item quiz__choice">
+              <p class="option__item--choice--background quiz__answer--choice heading-small">B</p>
+              <p class="heading-small">3 : 1</p>
+            </div>
+            <div class="option__item quiz__choice incorrect__answer">
+              <p class="option__item--choice--background quiz__answer--choice heading-small incorrect__answer--item--background">C</p>
+              <p class="heading-small">2.5 : 1</p>
+              <img class="incorrect__icon" src="./assets/images/icon-incorrect.svg" alt="">
+            </div>
+            <div class="option__item quiz__choice">
+              <p class="option__item--choice--background quiz__answer--choice heading-small">D</p>
+              <p class="heading-small">5 : 1</p>
+            </div>
           </div>
-          <div class="quiz__choice">
-            <p class="heading-small"><span class="quiz__answer--choice heading-small">B</span> 3 : 1</p>
+          <div class="quiz__submit--button">
+            <button class="btn heading-small" id="submit_answer">Submit answer</button>
+            </div>
+            <div id="error__message" class="error__message hidden">
+              <span class="error error__message body__medium"><img class="error__message--icon" src="./assets/images/icon-error.svg" alt="please select an answer"> Please select an answer</span>
+            </div>
           </div>
-          <div class="quiz__choice">
-            <p class="heading-small"><span class="quiz__answer--choice heading-small">C</span> 2.5 : 1</p>
-          </div>
-          <div class="quiz__choice">
-            <p class="heading-small"><span class="quiz__answer--choice heading-small">D</span> 5 : 1</p>
-          </div>
-          <button class="btn" id="submit_answer">Submit answer</button>
-          <div class="error__message">
-           <span><img src="./assets/images/icon-error.svg" alt="please select an answer"> Please select an answer</span>
-          </div>
+         
         </div>
       </section >
     
       <!-- Quiz question end -->
 
       <!-- Quiz completed start -->
-      <section class="results hidden">
+      <section class="results">
         <header>
-          <div>
-            <h1 class="header__welcome--message">Quiz completed<span class="heading-large">You scored...</span></h1>
-            <p class="font--italic font--small">Pick a subject to get started.</p>
-          </div>    
+          <div class="header">
+            <p class="font-light">Quiz completed</p>
+            <h1 class="header__welcome--message heading-large">You scored...</span></h1>
+          </div>  
+        </header>  
         <!-- score -->
-          <div>
-            <div>
-              <div>
-                <span class="current__quiz">
+        <div class="spacer--40 "></div>
+        <div class="results__score--container">
+          <div class="score">
+              <div class="score__current--quiz">
+                <picture class="background__purple">
                   <img
-                  class="current__quiz--icon-image"
+                  class="current__quiz--icon-image icon"
                   src="./assets/images/icon-accessibility.svg"
                   alt="You are currently doing the accessibility quiz"
                 />
+                </picture>
                 <h2 class="current__quiz--title heading-small">Accessibility</h2>
-                </span>
               </div>
               <div>
-                <p class="display">8</p>
-                <p class="body-medium">out of 10</p>
+                <p class="display score__count">8</p>
+                <div class="spacer--16"></div>
+                <p class="body__medium current__quiz--total--questions">out of 10</p>
               </div>
-            </div>
           </div>
-          <button class="btn" id="submit_answer">Play Again</button>
+          <div class="spacer--16"></div>
+          <button class="btn heading-small" id="reset">Play Again</button>
+        </div>
       </section>
       <!-- Quiz completed end -->
     </main>
