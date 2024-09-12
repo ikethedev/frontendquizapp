@@ -15,6 +15,28 @@ const startQuiz = () => {
         showQuestions(data);
         updateAnswerChoices(index)
 }
+
+
+const addHoverHome = (e) => {
+    console.log(e.target)
+    if(e.target.classList.contains("option__item")){
+      e.target.classList.add("option__item--hover")
+    }
+    if(e.target.parentElement.classList.contains("option__item")){
+      e.target.parentElement.classList.add("option__item--hover")
+    }
+  }
+
+  const removeHoverHome = (e) => {
+    if(e.target.classList.contains("option__item")){
+      e.target.classList.remove("option__item--hover")
+    }
+  
+}
+
+options.addEventListener("mouseover", addHoverHome);
+options.addEventListener("mouseout", removeHoverHome);
+
 options.addEventListener("click", async (e) => {
   
     if(e.target.tagName === "IMG") {

@@ -51,6 +51,28 @@ const darkModeMainText = () => {
     document.querySelector("#question__question--text").classList.toggle("darkMode__text")
 }
 
+const addHover = (e) => {
+    console.log(e.target)
+    if(e.target.classList.contains("option__item")){
+      e.target.classList.add("option__item--hover")
+      e.target.firstElementChild.classList.add("option__item--choice--background--hover")
+    }
+    if(e.target.parentElement.classList.contains("option__item")){
+      e.target.parentElement.classList.add("option__item--hover")
+      e.target.parentElement.firstElementChild.classList.add("option__item--choice--background--hover")
+    }
+  }
+
+  const removeHover = (e) => {
+    if(e.target.classList.contains("option__item")){
+      e.target.classList.remove("option__item--hover")
+      e.target.firstElementChild.classList.remove("option__item--choice--background--hover")
+    }
+    if(e.target.parentElement.classList.contains("option__item")){
+      e.target.parentElement.classList.remove("option__item--hover")
+  }
+}
+
 const darkModeQuestionBg = () => {
     const quizSection = document.querySelector(".quiz");
     const wasHidden = quizSection.classList.contains("hidden");
